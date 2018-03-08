@@ -41,6 +41,7 @@ public class JFrameGazeta extends javax.swing.JFrame {
         jLabelWyswietlanie = new javax.swing.JLabel();
         jButtonRemoveUser = new javax.swing.JButton();
         jComboBoxUsers = new javax.swing.JComboBox<>();
+        jButtonNotify = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,6 +80,13 @@ public class JFrameGazeta extends javax.swing.JFrame {
             }
         });
 
+        jButtonNotify.setText("Notify");
+        jButtonNotify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNotifyActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,7 +96,7 @@ public class JFrameGazeta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelWyswietlanie)
+                        .addComponent(jLabelWyswietlanie, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
@@ -99,6 +107,7 @@ public class JFrameGazeta extends javax.swing.JFrame {
                             .addComponent(jComboBoxUsers, 0, 121, Short.MAX_VALUE))
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonNotify, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonShowUsers, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonRemoveUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonAddUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -118,11 +127,13 @@ public class JFrameGazeta extends javax.swing.JFrame {
                     .addComponent(jComboBoxUsers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addComponent(jButtonShowUsers)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelWyswietlanie)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addComponent(jButtonNotify)
+                .addGap(15, 15, 15)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jLabelWyswietlanie, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         pack();
@@ -172,6 +183,10 @@ public class JFrameGazeta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxUsersActionPerformed
 
+    private void jButtonNotifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNotifyActionPerformed
+        redakcja.notifies();
+    }//GEN-LAST:event_jButtonNotifyActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -208,6 +223,7 @@ public class JFrameGazeta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAddUser;
+    private javax.swing.JButton jButtonNotify;
     private javax.swing.JButton jButtonRemoveUser;
     private javax.swing.JButton jButtonShowUsers;
     private javax.swing.JComboBox<String> jComboBoxUsers;
